@@ -128,9 +128,9 @@ function updateClock() {
 
   // Change the color of the progress bar
   if (mode === 'pomodoro') {
-    document.getElementById('progress-value').style.backgroundColor = '#cbf078';
+    document.getElementById('progress-value').style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
   } else {
-    document.getElementById('progress-value').style.backgroundColor = '#8ed6ff';
+    document.getElementById('progress-value').style.backgroundColor = 'rgba(142, 214, 255, 0.7)';
   }
 }
 
