@@ -41,7 +41,7 @@ body {
 hr {
   margin: 1rem 0;
   color: inherit;
-  background-color: currentColor;
+  background-color: transparent;
   border: 0;
   opacity: .25;
 }
