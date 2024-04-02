@@ -22,18 +22,20 @@ body {
 
 #progress-value {
   width: 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   height: 100%;
 }
 
 #clock {
   font-size: 30vw;
   line-height: 30vw;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #text {
   font-size: 10vw;
   line-height: 10vw;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 hr {
