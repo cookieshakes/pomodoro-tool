@@ -125,6 +125,13 @@ function updateClock() {
   const progress = length == 0 ? 1 : ((length - remainingTime) / length)
 
   document.getElementById('progress-value').style.width = progress * 100 + "vw";
+
+  // Change the color of the progress bar
+  if (mode === 'pomodoro') {
+    document.getElementById('progress-value').style.backgroundColor = '#cbf078';
+  } else {
+    document.getElementById('progress-value').style.backgroundColor = '#8ed6ff';
+  }
 }
 
 
