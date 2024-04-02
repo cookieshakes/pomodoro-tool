@@ -74,16 +74,40 @@ document.querySelector('#adjust-buttons').addEventListener('click', function (ev
   }
 });
 
+let pomodoroCount = 0;
+
 function updateClock() {
   remainingTime = (endTime - Date.now()) / 1000;
   if (remainingTime <= 0) {
     remainingTime = 0;
     clearInterval(interval);
     interval = null;
+
     if (mode === 'pomodoro') {
-      breakSound.play();
+      pomodoroCount++;
+      if (pomodoroCount % 4 === 0) {
+        mode = 'longBreak';
+      } else {
+        mode = 'shortBreak';
+      }
     } else {
+      mode = 'pomodoro';
+      if (mode === 'longBreak') {
+        pomodoroCount = 0; // Reset the counter after a long break
+      }
+    }
+
+    document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
+    document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
+
+    length = lengths[mode];
+    startTimer();
+
+    // Play the appropriate sound
+    if (mode === 'pomodoro') {
       workSound.play();
+    } else {
+      breakSound.play();
     }
   }
 
@@ -102,6 +126,7 @@ function updateClock() {
 
   document.getElementById('progress-value').style.width = progress * 100 + "vw";
 }
+
 
 function runTimer() {
   clearInterval(interval);
