@@ -15,11 +15,15 @@ body {
 #progress {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 #progress-value {
   width: 0;
   background-color: white;
+  height: 100%;
 }
 
 #clock {
