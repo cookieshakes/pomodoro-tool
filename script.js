@@ -118,7 +118,7 @@ function updateClock() {
 
   document.getElementById('clock').textContent = time;
 
-  const text = mode === 'pomodoro' ? 'FOCUS TIME' : 'BREAK TIME';
+  const text = mode === 'pomodoro' ? 'focus time' : 'break time';
   document.title = `${time} - ${text}`;
   document.getElementById('text').textContent = text;
 
