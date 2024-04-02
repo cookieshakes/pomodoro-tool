@@ -10,6 +10,7 @@ body {
 
 #progress, #progress-value {
   height: 10vh;
+  border-radius: 2px;
 }
 
 #progress {
@@ -29,13 +30,13 @@ body {
 #clock {
   font-size: 30vw;
   line-height: 30vw;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 #text {
   font-size: 10vw;
   line-height: 10vw;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 hr {
@@ -67,16 +68,16 @@ button {
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .5rem;
-  color: rgba(0, 0, 0, 0.7); /* 70% opacity */
-  background-color: rgba(248, 249, 250, 0.7); /* 70% opacity */
+  color: rgba(0, 0, 0, 0.5); /* 50% opacity */
+  background-color: rgba(248, 249, 250, 0.5); /* 50% opacity */
 }
 
 button.active {
-  background-color: rgba(219, 219, 219, 0.7); /* 70% opacity */
+  background-color: rgba(219, 219, 219, 0.5); /* 50% opacity */
 }
 
 button:active {
-  background-color: rgba(193, 198, 202, 0.7); /* 70% opacity */
+  background-color: rgba(193, 198, 202, 0.5); /* 50% opacity */
 }
 
 .btn-group {
