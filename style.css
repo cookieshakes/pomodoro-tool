@@ -16,7 +16,6 @@ body {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.2);
   border: 2px solid white;
-  border-radius: 20px;
   padding: 5px;
   box-sizing: border-box;
 }
@@ -24,7 +23,6 @@ body {
 #progress-value {
   width: 0;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 15px;
   height: 100%;
 }
 
