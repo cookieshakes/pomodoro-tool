@@ -85,7 +85,8 @@ function updateClock() {
     interval = null;
     if (mode === 'pomodoro') {
       pomodoroCount++;
-      document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
+      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
+      document.getElementById('tomatoes').innerHTML += '🍅';
       if (pomodoroCount === pomodoroGoal) {
         mode = 'longBreak';
       } else {
@@ -94,7 +95,7 @@ function updateClock() {
     } else {
       if (mode === 'longBreak') {
         pomodoroGoal += 4;
-        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
+        document.getElementById('pomodoroGoal').textContent = pomodoroGoal;
       }
       mode = 'pomodoro';
     }
