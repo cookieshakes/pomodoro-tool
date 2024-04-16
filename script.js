@@ -109,7 +109,7 @@ function updateClock() {
       breakSound.play();
     }
   }
-}
+
 
   const remainingSeconds = Math.round(remainingTime);
   const minutes = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
