@@ -85,8 +85,11 @@ function updateClock() {
 
     if (mode === 'pomodoro') {
       pomodoroCount++;
+      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
       if (pomodoroCount % 4 === 0) {
         mode = 'longBreak';
+        pomodoroCount = 0;
+        document.getElementById('pomodoroCounter').textContent = pomodoroCount;
       } else {
         mode = 'shortBreak';
       }
