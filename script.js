@@ -94,8 +94,11 @@ function updateClock() {
     } else {
       if (mode === 'longBreak') {
         pomodoroCount = 0;
+        mode = 'pomodoro';
+        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
+      } else {
+        mode = 'pomodoro';
       }
-      mode = 'pomodoro';
     }
     document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
@@ -131,7 +134,6 @@ function updateClock() {
     document.getElementById('progress-value').style.backgroundColor = 'rgba(142, 214, 255, 0.7)';
   }
 }
-
 function runTimer() {
   clearInterval(interval);
   paused = false;
