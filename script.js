@@ -122,7 +122,7 @@ function updateClock() {
   document.title = `${time} - ${text}`;
   document.getElementById('text').textContent = text;
 
-  const progress = length == 0 ? 1 : ((length - remainingTime) / length)
+  const progress = length === 0 ? 1 : ((length - remainingTime) / length);
 
   document.getElementById('progress-value').style.width = progress * 100 + "vw";
 
