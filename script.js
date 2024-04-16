@@ -1,4 +1,3 @@
-console.log('script loaded');
 const urlParams = new URLSearchParams(window.location.search);
 
 const lengths = {
@@ -110,7 +109,6 @@ function updateClock() {
     }
   }
 
-
   const remainingSeconds = Math.round(remainingTime);
   const minutes = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
   const seconds = (remainingSeconds % 60).toString().padStart(2, '0');
@@ -133,7 +131,6 @@ function updateClock() {
     document.getElementById('progress-value').style.backgroundColor = 'rgba(142, 214, 255, 0.7)';
   }
 }
-
 
 function runTimer() {
   clearInterval(interval);
