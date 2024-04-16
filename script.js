@@ -75,6 +75,7 @@ document.querySelector('#adjust-buttons').addEventListener('click', function (ev
 });
 
 let pomodoroCount = 0;
+let pomodoroGoal = 4;
 
 function updateClock() {
   remainingTime = (endTime - Date.now()) / 1000;
@@ -82,40 +83,32 @@ function updateClock() {
     remainingTime = 0;
     clearInterval(interval);
     interval = null;
-
     if (mode === 'pomodoro') {
       pomodoroCount++;
-      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
-      if (pomodoroCount % 4 === 0) {
+      document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
+      if (pomodoroCount === pomodoroGoal) {
         mode = 'longBreak';
       } else {
         mode = 'shortBreak';
       }
     } else {
+      if (mode === 'longBreak') {
+        pomodoroCount = 0;
+      }
       mode = 'pomodoro';
-      // Reset the counter after a long break
-      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
     }
-
     document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
-
     length = lengths[mode];
     startTimer();
-
     // Play the appropriate sound
     if (mode === 'pomodoro') {
       workSound.play();
     } else {
       breakSound.play();
     }
-
-    // Update the counter after changing the mode
-    if (mode === 'longBreak') {
-      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
-    }
   }
-  }
+}
 
   const remainingSeconds = Math.round(remainingTime);
   const minutes = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
