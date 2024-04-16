@@ -85,7 +85,7 @@ function updateClock() {
     interval = null;
     if (mode === 'pomodoro') {
       pomodoroCount++;
-      document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}`;
+      document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
       if (pomodoroCount === pomodoroGoal) {
         mode = 'longBreak';
       } else {
@@ -93,8 +93,8 @@ function updateClock() {
       }
     } else {
       if (mode === 'longBreak') {
-        pomodoroCount = 0;
-        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}`;
+        pomodoroGoal += 4;
+        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
       }
       mode = 'pomodoro';
     }
@@ -132,6 +132,7 @@ function updateClock() {
     document.getElementById('progress-value').style.backgroundColor = 'rgba(142, 214, 255, 0.7)';
   }
 }
+
 function runTimer() {
   clearInterval(interval);
   paused = false;
