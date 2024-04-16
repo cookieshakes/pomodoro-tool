@@ -1,3 +1,4 @@
+console.log('script loaded');
 const urlParams = new URLSearchParams(window.location.search);
 
 const lengths = {
