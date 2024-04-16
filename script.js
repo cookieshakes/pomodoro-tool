@@ -89,7 +89,6 @@ function updateClock() {
       if (pomodoroCount % 4 === 0) {
         mode = 'longBreak';
         pomodoroCount = 0;
-        document.getElementById('pomodoroCounter').textContent = pomodoroCount;
       } else {
         mode = 'shortBreak';
       }
@@ -109,6 +108,12 @@ function updateClock() {
     } else {
       breakSound.play();
     }
+
+    // Update the counter after changing the mode
+    if (mode === 'longBreak') {
+      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
+    }
+  }
   }
 
   const remainingSeconds = Math.round(remainingTime);
