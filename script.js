@@ -94,11 +94,8 @@ function updateClock() {
     } else {
       if (mode === 'longBreak') {
         pomodoroCount = 0;
-        mode = 'pomodoro';
-        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
-      } else {
-        mode = 'pomodoro';
       }
+      mode = 'pomodoro';
     }
     document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
@@ -106,6 +103,10 @@ function updateClock() {
     startTimer();
     // Play the appropriate sound
     if (mode === 'pomodoro') {
+      if (pomodoroCount === 0) {
+        pomodoroCount = 1;
+        document.getElementById('pomodoroCounter').textContent = `${pomodoroCount}/${pomodoroGoal}`;
+      }
       workSound.play();
     } else {
       breakSound.play();
