@@ -93,10 +93,8 @@ function updateClock() {
       }
     } else {
       mode = 'pomodoro';
-      if (mode === 'longBreak') {
-        pomodoroCount = 0; // Reset the counter after a long break
-        document.getElementById('pomodoroCounter').textContent = pomodoroCount;
-      }
+      // Reset the counter after a long break
+      document.getElementById('pomodoroCounter').textContent = pomodoroCount;
     }
 
     document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
