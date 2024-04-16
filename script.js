@@ -88,12 +88,15 @@ function updateClock() {
       document.getElementById('pomodoroCounter').textContent = pomodoroCount;
       if (pomodoroCount % 4 === 0) {
         mode = 'longBreak';
-        pomodoroCount = 0;
       } else {
         mode = 'shortBreak';
       }
     } else {
       mode = 'pomodoro';
+      if (mode === 'longBreak') {
+        pomodoroCount = 0; // Reset the counter after a long break
+        document.getElementById('pomodoroCounter').textContent = pomodoroCount;
+      }
     }
 
     document.querySelectorAll('button[data-mode]').forEach(e => e.classList.remove('active'));
