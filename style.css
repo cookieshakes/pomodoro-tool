@@ -6,10 +6,9 @@
 body {
   height: 100%;
   margin: 0;
-  font-family: 'InstagramSans', sans-serif;
+  font-family: 'InstagramSans';
   background-color: rgb(69, 69, 69);
   color: white;
-  font-family: monospace;
   text-align: center;
   overflow: hidden;
 }
