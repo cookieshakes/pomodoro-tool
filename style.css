@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'InstagramSans';
+    src: url('fonts/Instagram Sans.ttf') format('truetype');
+}
+
 body {
   height: 100%;
   margin: 0;
+  font-family: 'InstagramSans', sans-serif;
   background-color: rgb(69, 69, 69);
   color: white;
   font-family: monospace;
