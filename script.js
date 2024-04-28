@@ -6,8 +6,8 @@ const lengths = {
   longBreak: (Number(urlParams.get('longBreak')) || 10) * 60,
 }
 
-const breakSound = new Audio('sounds/break.mp3');
-const workSound = new Audio('sounds/work.mp3');
+const breakSound = new Audio('sounds/breakk.mp3');
+const workSound = new Audio('sounds/workk.mp3');
 
 let mode;
 let interval;
